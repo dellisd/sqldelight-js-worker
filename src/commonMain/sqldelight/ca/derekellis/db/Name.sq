@@ -1,0 +1,9 @@
+CREATE TABLE Name(
+    first TEXT NOT NULL
+);
+
+insert:
+INSERT INTO Name VALUES (?);
+
+getAll:
+SELECT * FROM Name;
