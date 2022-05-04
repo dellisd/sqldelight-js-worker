@@ -33,7 +33,7 @@ kotlin {
         val jsMain by getting {
             dependencies {
                 implementation("org.jetbrains.kotlinx:kotlinx-html:0.7.2")
-                implementation("app.cash.sqldelight:runtime:2.1.0-SNAPSHOT")
+                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.1")
                 implementation("app.cash.sqldelight:sqljs-driver:2.1.0-SNAPSHOT")
                 implementation(npm("sql.js", "1.6.2"))
                 implementation(devNpm("copy-webpack-plugin", "9.1.0"))
