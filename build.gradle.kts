@@ -20,7 +20,7 @@ repositories {
 }
 
 kotlin {
-    js(LEGACY) {
+    js(IR) {
         binaries.executable()
         browser {
             commonWebpackConfig {
@@ -35,7 +35,8 @@ kotlin {
                 implementation("org.jetbrains.kotlinx:kotlinx-html:0.7.2")
                 implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.1")
                 implementation("app.cash.sqldelight:sqljs-driver:2.0.0-alpha03")
-                implementation(npm("sql.js", "1.6.2"))
+                implementation(npm("@jlongster/sql.js", "1.6.7"))
+                implementation(npm("absurd-sql", "0.0.53"))
                 implementation(devNpm("copy-webpack-plugin", "9.1.0"))
             }
         }
