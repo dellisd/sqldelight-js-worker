@@ -1,9 +1,7 @@
 package ca.derekellis
 
-import app.cash.sqldelight.driver.sqljs.worker.JsWorkerSqlDriver
 import app.cash.sqldelight.async.coroutines.awaitAsList
-import app.cash.sqldelight.async.coroutines.awaitCreate
-import app.cash.sqldelight.driver.sqljs.worker.initAsyncSqlDriver
+import app.cash.sqldelight.driver.sqljs.worker.JsWorkerSqlDriver
 import ca.derekellis.db.MyDatabase
 import kotlinx.browser.document
 import kotlinx.browser.window
