@@ -1,5 +1,7 @@
 package ca.derekellis
 
+import app.cash.sqldelight.async.coroutines.awaitAsList
+import app.cash.sqldelight.async.coroutines.awaitCreate
 import app.cash.sqldelight.driver.sqljs.worker.initAsyncSqlDriver
 import ca.derekellis.db.MyDatabase
 import kotlinx.browser.document
@@ -23,14 +25,14 @@ fun main() {
             val driver = initAsyncSqlDriver("/worker.sql-wasm.js")
 
             console.log("Initialized!!")
-            val database = MyDatabase.Schema.create(driver).run { MyDatabase(driver) }
+            val database = MyDatabase.Schema.awaitCreate(driver).run { MyDatabase(driver) }
             database.nameQueries.insert("Derek")
             database.nameQueries.insert("Gustavo")
             database.nameQueries.insert("Celeste")
             database.nameQueries.insert("Geoffrey")
             database.nameQueries.insert("Grayson")
 
-            val list = database.nameQueries.getAll().executeAsList()
+            val list = database.nameQueries.getAll().awaitAsList()
             document.body?.nameTable(list)
         }
     }
