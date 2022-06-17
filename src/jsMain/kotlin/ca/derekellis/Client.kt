@@ -26,11 +26,13 @@ fun main() {
 
             console.log("Initialized!!")
             val database = MyDatabase.Schema.awaitCreate(driver).run { MyDatabase(driver) }
-            database.nameQueries.insert("Derek")
-            database.nameQueries.insert("Gustavo")
-            database.nameQueries.insert("Celeste")
-            database.nameQueries.insert("Geoffrey")
-            database.nameQueries.insert("Grayson")
+            database.transaction {
+                database.nameQueries.insert("Derek")
+                database.nameQueries.insert("Gustavo")
+                database.nameQueries.insert("Celeste")
+                database.nameQueries.insert("Geoffrey")
+                database.nameQueries.insert("Grayson")
+            }
 
             val list = database.nameQueries.getAll().awaitAsList()
             document.body?.nameTable(list)

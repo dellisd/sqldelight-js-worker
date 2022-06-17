@@ -1,6 +1,6 @@
 plugins {
     kotlin("multiplatform") version "1.7.0"
-    id("app.cash.sqldelight") version "2.0.0-SNAPSHOT"
+    id("app.cash.sqldelight") version "2.0.0-alpha03"
 }
 
 sqldelight {
@@ -34,7 +34,7 @@ kotlin {
             dependencies {
                 implementation("org.jetbrains.kotlinx:kotlinx-html:0.7.2")
                 implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.1")
-                implementation("app.cash.sqldelight:sqljs-driver:2.0.0-SNAPSHOT")
+                implementation("app.cash.sqldelight:sqljs-driver:2.0.0-alpha03")
                 implementation(npm("sql.js", "1.6.2"))
                 implementation(devNpm("copy-webpack-plugin", "9.1.0"))
             }
