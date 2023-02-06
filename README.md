@@ -1,3 +1,5 @@
+:warning: Superseded by https://github.com/dellisd/sqldelight-sqlite-wasm
+
 # sqldelight-js-worker
 
 Proof of concept of SQLDelight sqljs-driver running in a web worker.
